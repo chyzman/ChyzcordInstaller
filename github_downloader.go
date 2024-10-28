@@ -67,7 +67,7 @@ func GetGithubRelease(url string) (*GithubRelease, error) {
 func InitGithubDownloader() {
 	GithubDoneChan = make(chan bool, 1)
 
-	IsDevInstall = os.Getenv("EQUICORD_DEV_INSTALL") == "1"
+	IsDevInstall = os.Getenv("CHYZCORD_DEV_INSTALL") == "1"
 	Log.Debug("Is Dev Install: ", IsDevInstall)
 	if IsDevInstall {
 		GithubDoneChan <- true
@@ -95,20 +95,20 @@ func InitGithubDownloader() {
 	}()
 
 	// either .asar file or directory with main.js file (in DEV)
-	EquicordFile := ChyzcordDirectory
+	ChyzcordFile := ChyzcordDirectory
 
-	stat, err := os.Stat(EquicordFile)
+	stat, err := os.Stat(ChyzcordFile)
 	if err != nil {
 		return
 	}
 
 	// dev
 	if stat.IsDir() {
-		EquicordFile = path.Join(EquicordFile, "main.js")
+		ChyzcordFile = path.Join(ChyzcordFile, "main.js")
 	}
 
 	// Check hash of installed version if exists
-	b, err := os.ReadFile(EquicordFile)
+	b, err := os.ReadFile(ChyzcordFile)
 	if err != nil {
 		return
 	}

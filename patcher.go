@@ -21,17 +21,17 @@ var BaseDirErr error
 var ChyzcordDirectory string
 
 func init() {
-	if dir := os.Getenv("EQUICORD_USER_DATA_DIR"); dir != "" {
-		Log.Debug("Using EQUICORD_USER_DATA_DIR")
+	if dir := os.Getenv("CHYZCORD_USER_DATA_DIR"); dir != "" {
+		Log.Debug("Using CHYZCORD_USER_DATA_DIR")
 		BaseDir = dir
 	} else if dir = os.Getenv("DISCORD_USER_DATA_DIR"); dir != "" {
-		Log.Debug("Using DISCORD_USER_DATA_DIR/../EquicordData")
-		BaseDir = path.Join(dir, "..", "EquicordData")
+		Log.Debug("Using DISCORD_USER_DATA_DIR/../ChyzcordData")
+		BaseDir = path.Join(dir, "..", "ChyzcordData")
 	} else {
 		Log.Debug("Using UserConfig")
-		BaseDir = appdir.New("Equicord").UserConfig()
+		BaseDir = appdir.New("Chyzcord").UserConfig()
 	}
-	dir := os.Getenv("EQUICORD_DIRECTORY")
+	dir := os.Getenv("CHYZCORD_DIRECTORY")
 	if dir == "" {
 		if !ExistsFile(BaseDir) {
 			BaseDirErr = os.Mkdir(BaseDir, 0755)
@@ -43,10 +43,10 @@ func init() {
 		}
 	}
 	if dir != "" {
-		Log.Debug("Using EQUICORD_DIRECTORY")
+		Log.Debug("Using CHYZCORD_DIRECTORY")
 		ChyzcordDirectory = dir
 	} else {
-		ChyzcordDirectory = path.Join(BaseDir, "equicord.asar")
+		ChyzcordDirectory = path.Join(BaseDir, "chyzcord.asar")
 	}
 }
 

@@ -7,14 +7,14 @@ The Chyzcord Installer allows you to install [Chyzcord](https://github.com/chyzm
 ## Usage
 
 Windows
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.exe) 
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe)
+- [GUI](https://github.com/chyzman/ChyzcordInstaller/releases/latest/download/Chyzcord.exe) 
+- [CLI](https://github.com/chyzman/ChyzcordInstaller/releases/latest/download/ChyzcordInstaller.exe)
 
 MacOS
-- [GUI](https://github.com/Equicord/Equilotl/releases/latest/download/Equilotl.MacOS.zip)
+- [GUI](https://github.com/chyzman/ChyzcordInstaller/releases/latest/download/Chyzcord.MacOS.zip)
 
 Linux 
-- [CLI](https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli-Linux)
+- [CLI](https://github.com/chyzman/ChyzcordInstaller/releases/latest/download/ChyzcordInstaller-Linux)
 ## Building from source
 
 ### Prerequisites 
