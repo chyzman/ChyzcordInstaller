@@ -1,6 +1,6 @@
-$link = "https://github.com/Equicord/Equilotl/releases/latest/download/EquilotlCli.exe"
+$link = "https://github.com/chyzman/ChyzcordInstaller/releases/latest/download/ChyzcordInstaller.exe"
 
-$outfile = "$env:TEMP\EquilotlCli.exe"
+$outfile = "$env:TEMP\ChyzcordInstaller.exe"
 
 Write-Output "Downloading installer to $outfile"
 
