@@ -70,4 +70,4 @@ go build --tags cli
 ```
 
 You might want to pass some flags to this command to get a better build.
-See [the GitHub workflow](https://github.com/Equicord/Equilotl/blob/main/.github/workflows/release.yml) for what flags I pass or if you want more precise instructions
+See [the GitHub workflow](https://github.com/chyzman/ChyzcordInstaller/blob/main/.github/workflows/release.yml) for what flags I pass or if you want more precise instructions
