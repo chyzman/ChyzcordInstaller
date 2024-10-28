@@ -18,7 +18,7 @@ import (
 
 var BaseDir string
 var BaseDirErr error
-var EquicordDirectory string
+var ChyzcordDirectory string
 
 func init() {
 	if dir := os.Getenv("EQUICORD_USER_DATA_DIR"); dir != "" {
@@ -44,9 +44,9 @@ func init() {
 	}
 	if dir != "" {
 		Log.Debug("Using EQUICORD_DIRECTORY")
-		EquicordDirectory = dir
+		ChyzcordDirectory = dir
 	} else {
-		EquicordDirectory = path.Join(BaseDir, "equicord.asar")
+		ChyzcordDirectory = path.Join(BaseDir, "equicord.asar")
 	}
 }
 
@@ -99,7 +99,7 @@ func patchAppAsar(dir string, isSystemElectron bool) (err error) {
 	}
 
 	Log.Debug("Writing custom app.asar to", appAsar)
-	if err := WriteAppAsar(appAsar, EquicordDirectory); err != nil {
+	if err := WriteAppAsar(appAsar, ChyzcordDirectory); err != nil {
 		return err
 	}
 
@@ -149,14 +149,14 @@ func (di *DiscordInstall) patch() error {
 			}
 		}
 
-		Log.Debug("This is a flatpak. Trying to grant the Flatpak access to", EquicordDirectory+"...")
+		Log.Debug("This is a flatpak. Trying to grant the Flatpak access to", ChyzcordDirectory+"...")
 
 		isSystemFlatpak := strings.HasPrefix(di.path, "/var")
 		var args []string
 		if !isSystemFlatpak {
 			args = append(args, "--user")
 		}
-		args = append(args, "override", name, "--filesystem="+EquicordDirectory)
+		args = append(args, "override", name, "--filesystem="+ChyzcordDirectory)
 		fullCmd := "flatpak " + strings.Join(args, " ")
 
 		Log.Debug("Running", fullCmd)
@@ -177,7 +177,7 @@ func (di *DiscordInstall) patch() error {
 			err = cmd.Run()
 		}
 		if err != nil {
-			return errors.New("Failed to grant Discord Flatpak access to " + EquicordDirectory + ": " + err.Error())
+			return errors.New("Failed to grant Discord Flatpak access to " + ChyzcordDirectory + ": " + err.Error())
 		}
 	}
 	return nil
