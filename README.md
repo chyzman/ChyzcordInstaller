@@ -1,6 +1,6 @@
-# Equilotl
+# Chyzcord Installer
 
-The Equicord Installer allows you to install [Equicord, the cutest Discord Desktop client mod](https://github.com/Equicord/Equicord)
+The Chyzcord Installer allows you to install [Chyzcord](https://github.com/chyzman/Chyzcord)
 
 ![image](https://i.imgur.com/oHN41ss.png)
 
